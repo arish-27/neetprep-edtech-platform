@@ -1,0 +1,280 @@
+[
+  {
+    "id": "v_mech_1",
+    "subjectId": "physics",
+    "chapterId": "mech",
+    "title": "Kinematics: Basics to Exam Patterns",
+    "description": "Displacement, velocity, acceleration, and graphs with quick NEET-style practice.",
+    "teacher": "Dr. A. Verma",
+    "durationMin": 18,
+    "url": "https://www.youtube.com/watch?v=aircAruvnKk"
+  },
+  {
+    "id": "v_mech_2",
+    "subjectId": "physics",
+    "chapterId": "mech",
+    "title": "Newton's Laws: FBD + Tricks",
+    "description": "Free body diagrams, common pitfalls, and high-yield question patterns.",
+    "teacher": "Dr. A. Verma",
+    "durationMin": 22,
+    "url": "https://www.youtube.com/watch?v=M7lc1UVf-VE"
+  },
+  {
+    "id": "v_mech_3",
+    "subjectId": "physics",
+    "chapterId": "mech",
+    "title": "Work-Energy: Shortcuts + PYQs",
+    "description": "Work-energy theorem, power, and quick conversions for speed.",
+    "teacher": "Dr. A. Verma",
+    "durationMin": 16,
+    "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM"
+  },
+
+  {
+    "id": "v_electro_1",
+    "subjectId": "physics",
+    "chapterId": "electro",
+    "title": "Coulomb's Law: Practice Set 1",
+    "description": "Charge interactions, vector direction, and common traps.",
+    "teacher": "Prof. S. Roy",
+    "durationMin": 20,
+    "url": "https://www.youtube.com/watch?v=aircAruvnKk"
+  },
+  {
+    "id": "v_electro_2",
+    "subjectId": "physics",
+    "chapterId": "electro",
+    "title": "Electric Field: Concept + Questions",
+    "description": "Field lines, superposition, and important results.",
+    "teacher": "Prof. S. Roy",
+    "durationMin": 19,
+    "url": "https://www.youtube.com/watch?v=M7lc1UVf-VE"
+  },
+  {
+    "id": "v_electro_3",
+    "subjectId": "physics",
+    "chapterId": "electro",
+    "title": "Capacitance: Fast Revision",
+    "description": "Series/parallel, energy stored, and quick formula sheet.",
+    "teacher": "Prof. S. Roy",
+    "durationMin": 17,
+    "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM"
+  },
+
+  {
+    "id": "v_optics_1",
+    "subjectId": "physics",
+    "chapterId": "optics",
+    "title": "Ray Optics: Mirrors & Lenses",
+    "description": "Sign conventions, formula use-cases, and typical NEET questions.",
+    "teacher": "Prof. S. Roy",
+    "durationMin": 19,
+    "url": "https://www.youtube.com/watch?v=aircAruvnKk"
+  },
+  {
+    "id": "v_optics_2",
+    "subjectId": "physics",
+    "chapterId": "optics",
+    "title": "Lens Combination: Quick Methods",
+    "description": "Equivalent focal length and image formation speed tricks.",
+    "teacher": "Prof. S. Roy",
+    "durationMin": 14,
+    "url": "https://www.youtube.com/watch?v=M7lc1UVf-VE"
+  },
+  {
+    "id": "v_optics_3",
+    "subjectId": "physics",
+    "chapterId": "optics",
+    "title": "Wave Optics: Key Concepts",
+    "description": "Interference, diffraction, and the must-remember formulas.",
+    "teacher": "Prof. S. Roy",
+    "durationMin": 15,
+    "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM"
+  },
+
+  {
+    "id": "v_physical_1",
+    "subjectId": "chemistry",
+    "chapterId": "physical",
+    "title": "Mole Concept: Fast Calculations",
+    "description": "Moles, limiting reagent, and common numerical patterns.",
+    "teacher": "Dr. R. Khan",
+    "durationMin": 16,
+    "url": "https://www.youtube.com/watch?v=aircAruvnKk"
+  },
+  {
+    "id": "v_physical_2",
+    "subjectId": "chemistry",
+    "chapterId": "physical",
+    "title": "Thermodynamics: One-Shot Revision",
+    "description": "Enthalpy, entropy, Gibbs free energy and typical questions.",
+    "teacher": "Dr. R. Khan",
+    "durationMin": 21,
+    "url": "https://www.youtube.com/watch?v=M7lc1UVf-VE"
+  },
+  {
+    "id": "v_physical_3",
+    "subjectId": "chemistry",
+    "chapterId": "physical",
+    "title": "Equilibrium: Score Booster",
+    "description": "Kc/Kp, Le Chatelier's principle, and quick checks.",
+    "teacher": "Dr. R. Khan",
+    "durationMin": 18,
+    "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM"
+  },
+
+  {
+    "id": "v_organic_1",
+    "subjectId": "chemistry",
+    "chapterId": "organic",
+    "title": "GOC: Inductive/Resonance Effects",
+    "description": "Acidity/basicity patterns and stability shortcuts.",
+    "teacher": "Dr. N. Iyer",
+    "durationMin": 18,
+    "url": "https://www.youtube.com/watch?v=aircAruvnKk"
+  },
+  {
+    "id": "v_organic_2",
+    "subjectId": "chemistry",
+    "chapterId": "organic",
+    "title": "Isomerism: Rapid Practice",
+    "description": "Structural and stereoisomerism with typical questions.",
+    "teacher": "Dr. N. Iyer",
+    "durationMin": 20,
+    "url": "https://www.youtube.com/watch?v=M7lc1UVf-VE"
+  },
+  {
+    "id": "v_organic_3",
+    "subjectId": "chemistry",
+    "chapterId": "organic",
+    "title": "Reaction Mechanisms: Basics",
+    "description": "Carbocations, radicals, and rearrangements you must know.",
+    "teacher": "Dr. N. Iyer",
+    "durationMin": 17,
+    "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM"
+  },
+
+  {
+    "id": "v_inorganic_1",
+    "subjectId": "chemistry",
+    "chapterId": "inorganic",
+    "title": "Periodic Trends: Most Asked",
+    "description": "Atomic size, IE, EA and the pattern-based approach.",
+    "teacher": "Prof. K. Das",
+    "durationMin": 15,
+    "url": "https://www.youtube.com/watch?v=aircAruvnKk"
+  },
+  {
+    "id": "v_inorganic_2",
+    "subjectId": "chemistry",
+    "chapterId": "inorganic",
+    "title": "Chemical Bonding: Quick Concepts",
+    "description": "Hybridization, VSEPR, and common misconceptions.",
+    "teacher": "Prof. K. Das",
+    "durationMin": 22,
+    "url": "https://www.youtube.com/watch?v=M7lc1UVf-VE"
+  },
+  {
+    "id": "v_inorganic_3",
+    "subjectId": "chemistry",
+    "chapterId": "inorganic",
+    "title": "p-Block: Revision Capsule",
+    "description": "High-yield facts and typical NEET patterns.",
+    "teacher": "Prof. K. Das",
+    "durationMin": 19,
+    "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM"
+  },
+
+  {
+    "id": "v_human_1",
+    "subjectId": "biology",
+    "chapterId": "human",
+    "title": "Digestion & Absorption: NCERT Focus",
+    "description": "Processes, enzymes, and diagram-based quick recall.",
+    "teacher": "Dr. P. Sharma",
+    "durationMin": 17,
+    "url": "https://www.youtube.com/watch?v=aircAruvnKk"
+  },
+  {
+    "id": "v_human_2",
+    "subjectId": "biology",
+    "chapterId": "human",
+    "title": "Breathing: Concepts + MCQs",
+    "description": "Volumes/capacities and the most asked MCQ patterns.",
+    "teacher": "Dr. P. Sharma",
+    "durationMin": 18,
+    "url": "https://www.youtube.com/watch?v=M7lc1UVf-VE"
+  },
+  {
+    "id": "v_human_3",
+    "subjectId": "biology",
+    "chapterId": "human",
+    "title": "Circulation: One-Shot Revision",
+    "description": "Heart, blood vessels, and key NCERT lines.",
+    "teacher": "Dr. P. Sharma",
+    "durationMin": 16,
+    "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM"
+  },
+
+  {
+    "id": "v_genetics_1",
+    "subjectId": "biology",
+    "chapterId": "genetics",
+    "title": "Mendelian Genetics: Patterns",
+    "description": "Crosses, ratios, and the shortcut approach.",
+    "teacher": "Dr. P. Sharma",
+    "durationMin": 19,
+    "url": "https://www.youtube.com/watch?v=aircAruvnKk"
+  },
+  {
+    "id": "v_genetics_2",
+    "subjectId": "biology",
+    "chapterId": "genetics",
+    "title": "DNA/RNA: Structure to Function",
+    "description": "Replication, transcription, translation in a clean flow.",
+    "teacher": "Dr. P. Sharma",
+    "durationMin": 20,
+    "url": "https://www.youtube.com/watch?v=M7lc1UVf-VE"
+  },
+  {
+    "id": "v_genetics_3",
+    "subjectId": "biology",
+    "chapterId": "genetics",
+    "title": "Inheritance: Problem-Solving",
+    "description": "Pedigree basics and NEET-style practice set.",
+    "teacher": "Dr. P. Sharma",
+    "durationMin": 17,
+    "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM"
+  },
+
+  {
+    "id": "v_ecology_1",
+    "subjectId": "biology",
+    "chapterId": "ecology",
+    "title": "Ecosystem: Energy Flow",
+    "description": "Food chains, pyramids, and high-yield points.",
+    "teacher": "Dr. P. Sharma",
+    "durationMin": 15,
+    "url": "https://www.youtube.com/watch?v=aircAruvnKk"
+  },
+  {
+    "id": "v_ecology_2",
+    "subjectId": "biology",
+    "chapterId": "ecology",
+    "title": "Biodiversity: NCERT Revision",
+    "description": "Hotspots, conservation, and typical questions.",
+    "teacher": "Dr. P. Sharma",
+    "durationMin": 16,
+    "url": "https://www.youtube.com/watch?v=M7lc1UVf-VE"
+  },
+  {
+    "id": "v_ecology_3",
+    "subjectId": "biology",
+    "chapterId": "ecology",
+    "title": "Environmental Issues: Score Booster",
+    "description": "Pollution, ozone depletion, and important facts.",
+    "teacher": "Dr. P. Sharma",
+    "durationMin": 18,
+    "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM"
+  }
+]

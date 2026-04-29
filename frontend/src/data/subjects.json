@@ -1,0 +1,20 @@
+[
+  {
+    "id": "physics",
+    "name": "Physics",
+    "tagline": "Concepts + numericals",
+    "gradient": "from-violet-600 via-fuchsia-600 to-pink-500"
+  },
+  {
+    "id": "chemistry",
+    "name": "Chemistry",
+    "tagline": "Reactions + memory",
+    "gradient": "from-byjus-700 via-byjus-600 to-indigo-500"
+  },
+  {
+    "id": "biology",
+    "name": "Biology",
+    "tagline": "NCERT mastery",
+    "gradient": "from-emerald-600 via-teal-600 to-cyan-500"
+  }
+]

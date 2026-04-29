@@ -1,0 +1,2 @@
+INFO:     127.0.0.1:64546 - "GET /api/v1/courses?subject=Physics&limit=1&offset=0 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63514 - "GET /api/v1/courses?subject=Physics&limit=1&offset=0 HTTP/1.1" 200 OK

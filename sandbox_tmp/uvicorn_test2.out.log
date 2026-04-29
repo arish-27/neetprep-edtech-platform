@@ -1,0 +1,2 @@
+INFO:     127.0.0.1:54303 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54303 - "GET /api/v1/courses?limit=1&offset=0 HTTP/1.1" 200 OK

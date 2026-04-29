@@ -1,0 +1,6 @@
+INFO:     Started server process [21496]
+INFO:     Waiting for application startup.
+2026-04-24 11:59:44,071 | INFO | app | Uploads directory ready at uploads
+2026-04-24 11:59:44,381 | INFO | app | Demo data ready (auto-seed enabled).
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)

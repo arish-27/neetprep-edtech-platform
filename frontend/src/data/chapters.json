@@ -1,0 +1,83 @@
+[
+  {
+    "id": "mech",
+    "subjectId": "physics",
+    "title": "Mechanics",
+    "topics": ["Kinematics", "NLM", "Work-Energy", "Circular Motion"],
+    "progress": 58,
+    "nextVideoId": "v_mech_1",
+    "quizId": "q_mech"
+  },
+  {
+    "id": "electro",
+    "subjectId": "physics",
+    "title": "Electrostatics",
+    "topics": ["Coulomb's Law", "Electric Field", "Potential", "Capacitance"],
+    "progress": 41,
+    "nextVideoId": "v_electro_1",
+    "quizId": "q_electro"
+  },
+  {
+    "id": "optics",
+    "subjectId": "physics",
+    "title": "Optics",
+    "topics": ["Ray Optics", "Lenses", "Mirrors", "Wave Optics"],
+    "progress": 36,
+    "nextVideoId": "v_optics_1",
+    "quizId": "q_optics"
+  },
+  {
+    "id": "physical",
+    "subjectId": "chemistry",
+    "title": "Physical Chemistry",
+    "topics": ["Mole Concept", "Thermodynamics", "Equilibrium", "Electrochemistry"],
+    "progress": 52,
+    "nextVideoId": "v_physical_1",
+    "quizId": "q_physical"
+  },
+  {
+    "id": "organic",
+    "subjectId": "chemistry",
+    "title": "Organic Basics",
+    "topics": ["GOC", "Isomerism", "Reaction Mechanisms"],
+    "progress": 34,
+    "nextVideoId": "v_organic_1",
+    "quizId": "q_organic"
+  },
+  {
+    "id": "inorganic",
+    "subjectId": "chemistry",
+    "title": "Inorganic Chemistry",
+    "topics": ["Periodic Trends", "Chemical Bonding", "p-Block"],
+    "progress": 45,
+    "nextVideoId": "v_inorganic_1",
+    "quizId": "q_inorganic"
+  },
+  {
+    "id": "human",
+    "subjectId": "biology",
+    "title": "Human Physiology",
+    "topics": ["Digestion", "Breathing", "Circulation", "Excretion"],
+    "progress": 73,
+    "nextVideoId": "v_human_1",
+    "quizId": "q_human"
+  },
+  {
+    "id": "genetics",
+    "subjectId": "biology",
+    "title": "Genetics",
+    "topics": ["Mendel", "DNA/RNA", "Inheritance Patterns"],
+    "progress": 62,
+    "nextVideoId": "v_genetics_1",
+    "quizId": "q_genetics"
+  },
+  {
+    "id": "ecology",
+    "subjectId": "biology",
+    "title": "Ecology",
+    "topics": ["Ecosystem", "Biodiversity", "Environmental Issues"],
+    "progress": 57,
+    "nextVideoId": "v_ecology_1",
+    "quizId": "q_ecology"
+  }
+]
