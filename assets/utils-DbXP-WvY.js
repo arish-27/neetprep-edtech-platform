@@ -1,0 +1,1 @@
+function s(a){const t=Math.max(0,Math.floor(a)),r=Math.floor(t/3600),o=Math.floor(t%3600/60),n=t%60;return r>0?`${r}:${String(o).padStart(2,"0")}:${String(n).padStart(2,"0")}`:`${o}:${String(n).padStart(2,"0")}`}function f(a){const t=[...a];for(let r=t.length-1;r>0;r-=1){const o=Math.floor(Math.random()*(r+1));[t[r],t[o]]=[t[o],t[r]]}return t}export{s as f,f as s};
