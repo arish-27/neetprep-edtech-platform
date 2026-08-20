@@ -1,0 +1,1 @@
+import{r as s,l as t}from"./index-DwyImcol.js";function d(){const[r,e]=s.useState(()=>t.persist.hasHydrated());return s.useEffect(()=>{if(r)return;const a=t.persist.onFinishHydration(()=>e(!0));return t.persist.hasHydrated()&&e(!0),a},[]),r}export{d as u};

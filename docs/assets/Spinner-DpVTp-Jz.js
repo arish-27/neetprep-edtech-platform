@@ -1,0 +1,1 @@
+import{j as e,v as a}from"./index-DwyImcol.js";function s({className:r}){return e.jsx("div",{className:a("h-5 w-5 animate-spin rounded-full border-2 border-ink-300 border-t-byjus-600 dark:border-white/20 dark:border-t-byjus-400",r),"aria-label":"Loading",role:"status"})}export{s as S};

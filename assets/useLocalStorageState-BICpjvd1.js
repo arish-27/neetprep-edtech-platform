@@ -1,0 +1,1 @@
+import{r as o}from"./index-DwyImcol.js";function n(t,r){const[e,c]=o.useState(()=>{try{const s=localStorage.getItem(t);if(s===null)return r;const a=JSON.parse(s);return Array.isArray(a)&&a.length===0&&Array.isArray(r)&&r.length>0?r:a}catch{return r}});return o.useEffect(()=>{try{localStorage.setItem(t,JSON.stringify(e))}catch{}},[t,e]),[e,c]}export{n as u};
