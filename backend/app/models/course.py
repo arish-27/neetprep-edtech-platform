@@ -29,3 +29,5 @@ class Course(Base):
   quizzes = relationship("Quiz", back_populates="course", cascade="all, delete-orphan")
   enrollments = relationship("Enrollment", back_populates="course", cascade="all, delete-orphan")
   uploads = relationship("Upload", back_populates="course")
+  payments = relationship("Payment", back_populates="course")
+  price = relationship("CoursePrice", back_populates="course", uselist=False)

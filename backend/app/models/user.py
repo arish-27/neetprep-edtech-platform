@@ -31,3 +31,4 @@ class User(Base):
   teacher_subject = relationship("TeacherSubject", back_populates="user", uselist=False, cascade="all, delete-orphan")
   student_performances = relationship("StudentPerformance", back_populates="user", cascade="all, delete-orphan")
   uploads = relationship("Upload", back_populates="uploader")
+  payments = relationship("Payment", foreign_keys="[Payment.user_id]", back_populates="user", cascade="all, delete-orphan")

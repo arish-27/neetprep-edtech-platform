@@ -48,6 +48,15 @@ class Settings(BaseSettings):
 
   # Optional seed admin
   SEED_ADMIN_EMAIL: str = "admin@demo.com"
+  
+  # Demo UPI Payment Configuration
+  DEMO_UPI_ID: str = Field(default="neetlearning@upi")
+  DEMO_UPI_PAYEE_NAME: str = Field(default="NEET Learning Platform")
+
+  # Deprecated payment gateway fields (kept optional for backwards compatibility)
+  RAZORPAY_KEY_ID: str = Field(default="")
+  RAZORPAY_KEY_SECRET: str = Field(default="")
+  RAZORPAY_WEBHOOK_SECRET: str = Field(default="")
   SEED_ADMIN_USERNAME: str = "Admin"
   SEED_ADMIN_PASSWORD: str = "admin123"
 

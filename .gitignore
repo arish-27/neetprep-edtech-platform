@@ -1,0 +1,114 @@
+# =============================================================================
+# Root .gitignore - Professional Full-Stack EdTech Platform
+# =============================================================================
+
+# ── Environment & Secrets (NEVER COMMIT SENSITIVE KEYS) ──────────────────────
+.env
+.env.*
+*.env
+*.env.local
+*.env.production
+*.env.development
+secrets.json
+credentials.json
+*.pem
+*.key
+*.cert
+*.crt
+!*.env.example
+
+# ── Python / Backend ─────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+backend/venv/
+backend/env/
+backend/.venv/
+env.bak/
+venv.bak/
+
+# Python Testing & Type Checking
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.tox/
+nosetests.xml
+coverage.xml
+
+# ── Node.js / Frontend ───────────────────────────────────────────────────────
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+.npm
+.npm-cache/
+frontend/.npm-cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Frontend Build Outputs
+dist/
+frontend/dist/
+build/
+.vite/
+frontend/.vite/
+.next/
+out/
+
+# ── Media, Uploads & Databases ───────────────────────────────────────────────
+uploads/
+backend/uploads/
+*.sqlite
+*.sqlite3
+*.db
+media/
+sandbox_tmp/
+.kiro_tmp/
+
+# ── IDEs & Operating System ─────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+*~

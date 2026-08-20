@@ -74,14 +74,14 @@
 
   body {
     @apply antialiased;
-    background: var(--bg-page);
+    background: transparent;
     color: #111827;
     font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
   }
   
   .dark body, .dark {
     color: #E5E7EB;
-    background: #0B0F1A;
+    background: transparent;
   }
 
   /* Global dark mode text inheritance fix */

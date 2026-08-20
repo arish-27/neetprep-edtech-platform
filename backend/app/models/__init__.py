@@ -7,9 +7,11 @@ from app.models.question import Question
 from app.models.quiz import Quiz
 from app.models.quiz_result import QuizResult
 from app.models.student_performance import StudentPerformance
+from app.models.teacher_code import TeacherAccessCode
 from app.models.teacher_subject import TeacherSubject
 from app.models.upload import Upload
 from app.models.user import User
+from app.models.payment import Payment, CoursePrice, PaymentStatus, PaymentMethod
 
 __all__ = [
   "User",
@@ -24,4 +26,9 @@ __all__ = [
   "Enrollment",
   "TeacherSubject",
   "StudentPerformance",
+  "TeacherAccessCode",
+  "Payment",
+  "CoursePrice",
+  "PaymentStatus",
+  "PaymentMethod",
 ]
