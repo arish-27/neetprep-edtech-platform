@@ -1,0 +1,1 @@
+const t="neet_role_v1";function r(){try{return localStorage.getItem(t)!=null}catch{return!1}}function a(){try{return localStorage.getItem(t)==="teacher"?"teacher":"student"}catch{return"student"}}function n(e){try{localStorage.setItem(t,e)}catch{}}export{r as h,a as l,n as s};
