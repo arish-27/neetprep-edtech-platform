@@ -1,6 +1,7 @@
 # 🩺 NEETPrep — Full-Stack NEET Learning & Exam Prep Platform
 
-[![GitHub Pages Deployment](https://img.shields.io/badge/Deploy-GitHub%20Pages-blue?logo=github&style=flat-square)](https://pages.github.com/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-success?style=for-the-badge&logo=github&logoColor=white)](https://arish-27.github.io/neetprep-edtech-platform/)
+[![GitHub Pages Deployment](https://img.shields.io/badge/Deploy-GitHub%20Pages-blue?logo=github&style=flat-square)](https://arish-27.github.io/neetprep-edtech-platform/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688?logo=fastapi&logoColor=white&style=flat-square)](https://fastapi.tiangolo.com)
 [![React](https://img.shields.io/badge/React-18.3-61DAFB?logo=react&logoColor=black&style=flat-square)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?logo=vite&logoColor=white&style=flat-square)](https://vitejs.dev/)
@@ -8,6 +9,8 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-336791?logo=postgresql&logoColor=white&style=flat-square)](https://www.postgresql.org/)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white&style=flat-square)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+
+> 🌐 **Live Website Link**: [https://arish-27.github.io/neetprep-edtech-platform/](https://arish-27.github.io/neetprep-edtech-platform/)
 
 An all-in-one, modern, and interactive EdTech web platform designed specifically for **NEET (National Eligibility cum Entrance Test)** aspirants. The platform offers structured video lessons, interactive chapter-wise quizzes, real-time mock test simulations, AI-powered doubt assistance, performance analytics, payment integrations, and comprehensive student/teacher management dashboards.
 
@@ -179,7 +182,8 @@ cp .env.example .env
 npm run dev
 ```
 
-- **Frontend Application**: [http://localhost:5173](http://localhost:5173)
+- **Frontend Application (Local)**: [http://localhost:5173](http://localhost:5173)
+- **Live Deployed Application (GitHub Pages)**: [https://arish-27.github.io/neetprep-edtech-platform/](https://arish-27.github.io/neetprep-edtech-platform/)
 
 ---
 
