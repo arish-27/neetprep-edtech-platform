@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { BarChart3, Bell, BookOpen, Bookmark, ChevronLeft, ChevronRight, ClipboardList, CreditCard, Crown, GraduationCap, HelpCircle, Home, LogOut, Menu, Moon, Radio, Search, Settings, Sparkles, Sun, UploadCloud, User, Video, } from "lucide-react";
 import { appNav } from "@/navigation/appNav";
 import { cn } from "@/lib/cn";
@@ -19,11 +19,12 @@ function usePageTitle(pathname) {
 }
 export function AppShell({ children }) {
     const { user, signOut } = useAuth();
+    const navigate = useNavigate();
     const location = useLocation();
     const title = usePageTitle(location.pathname);
     function handleSignOut() {
         signOut();
-        window.location.replace("/");
+        navigate("/");
     }
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [moreOpen, setMoreOpen] = useState(true); // default open so items are always accessible

@@ -1,33 +1,21 @@
-import { useCallback, useRef, useState } from "react";
-import { motion, AnimatePresence, useAnimationFrame } from "framer-motion";
+import { useCallback, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Dna, Heart, Plus, Stethoscope } from "lucide-react";
 import { useAuth } from "@/auth/AuthContext";
 function useParticles(n) {
-    const [init] = useState(() => Array.from({ length: n }, (_, i) => ({
-        id: i, x: Math.random() * 100, y: Math.random() * 100,
+    const [particles] = useState(() => Array.from({ length: n }, (_, i) => ({
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
         size: Math.random() * 2.5 + 0.8,
-        sx: (Math.random() - 0.5) * 0.012, sy: (Math.random() - 0.5) * 0.012,
         op: Math.random() * 0.45 + 0.1,
+        dx: (Math.random() - 0.5) * 30,
+        dy: (Math.random() - 0.5) * 30,
+        duration: Math.random() * 6 + 6,
+        delay: Math.random() * 2,
     })));
-    const ref = useRef(init.map((p) => ({ ...p })));
-    const [, tick] = useState(0);
-    useAnimationFrame(() => {
-        ref.current = ref.current.map((p) => {
-            let x = p.x + p.sx, y = p.y + p.sy;
-            if (x < 0 || x > 100) {
-                p.sx *= -1;
-                x = Math.max(0, Math.min(100, x));
-            }
-            if (y < 0 || y > 100) {
-                p.sy *= -1;
-                y = Math.max(0, Math.min(100, y));
-            }
-            return { ...p, x, y };
-        });
-        tick((t) => t + 1);
-    });
-    return ref.current;
+    return particles;
 }
 // ── Floating icon ─────────────────────────────────────────────────────────────
 function FIcon({ Icon, x, y, delay, size = 28 }) {
@@ -88,11 +76,20 @@ export function SplashScreen() {
 
           {/* ── Particles ── */}
           <div className="absolute inset-0 pointer-events-none">
-            {particles.map((p) => (<div key={p.id} className="absolute rounded-full" style={{
+            {particles.map((p) => (<motion.div key={p.id} className="absolute rounded-full" style={{
                     left: `${p.x}%`, top: `${p.y}%`,
                     width: p.size, height: p.size, opacity: p.op,
                     background: p.id % 2 === 0 ? "#FF7A18" : "#ffffff",
                     boxShadow: `0 0 ${p.size * 3}px ${p.size}px ${p.id % 2 === 0 ? "rgba(255,122,24,0.5)" : "rgba(255,255,255,0.2)"}`,
+                }} animate={{
+                    x: [0, p.dx, 0],
+                    y: [0, p.dy, 0],
+                    opacity: [p.op, p.op * 1.5, p.op],
+                }} transition={{
+                    duration: p.duration,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: p.delay,
                 }}/>))}
           </div>
 

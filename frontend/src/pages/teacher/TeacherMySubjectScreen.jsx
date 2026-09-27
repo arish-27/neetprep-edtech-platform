@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AlertTriangle, BookOpen, CheckCircle2, ExternalLink, FileText, Loader2, Plus, Upload, Video, } from "lucide-react";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
@@ -115,6 +116,7 @@ function UploadForm({ subject, onUploaded, }) {
 }
 // ── Main screen ───────────────────────────────────────────────────────────────
 export function TeacherMySubjectScreen() {
+    const navigate = useNavigate();
     const [subjectInfo, setSubjectInfo] = useState(null);
     const [subjectLoading, setSubjectLoading] = useState(true);
     const [subjectError, setSubjectError] = useState(null);
@@ -124,9 +126,10 @@ export function TeacherMySubjectScreen() {
     const [selectedSubject, setSelectedSubject] = useState("Physics");
     const [assignError, setAssignError] = useState(null);
     const [showUploadForm, setShowUploadForm] = useState(false);
-    // Load subject assignment
-    useEffect(() => {
+
+    const loadSubject = () => {
         setSubjectLoading(true);
+        setSubjectError(null);
         api.teacher.mySubject()
             .then((s) => setSubjectInfo(s))
             .catch((err) => {
@@ -139,6 +142,11 @@ export function TeacherMySubjectScreen() {
             }
         })
             .finally(() => setSubjectLoading(false));
+    };
+
+    // Load subject assignment
+    useEffect(() => {
+        loadSubject();
     }, []);
     // Load resources when subject is known
     useEffect(() => {
@@ -157,7 +165,7 @@ export function TeacherMySubjectScreen() {
             const result = await api.teacher.selfAssignSubject({ subject: selectedSubject });
             setSubjectInfo(result);
             // Redirect to dashboard after subject assignment
-            window.location.href = "/teacher";
+            navigate("/teacher");
         }
         catch (err) {
             setAssignError(err?.message ?? "Failed to assign subject.");
@@ -176,7 +184,7 @@ export function TeacherMySubjectScreen() {
             <AlertTriangle className="mx-auto h-10 w-10 text-rose-400 mb-3"/>
             <div className="text-base font-extrabold text-slate-800">Failed to load subject</div>
             <div className="mt-1 text-sm text-slate-500">{subjectError}</div>
-            <Button variant="secondary" className="mt-4 h-10 rounded-2xl" onClick={() => window.location.reload()}>
+            <Button variant="secondary" className="mt-4 h-10 rounded-2xl" onClick={loadSubject}>
               Retry
             </Button>
           </Card>) : subjectInfo ? (<Card className="overflow-hidden">

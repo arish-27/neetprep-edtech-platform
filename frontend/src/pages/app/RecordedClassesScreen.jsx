@@ -435,11 +435,6 @@ export function RecordedClassesScreen() {
         }
         catch (err) {
             console.error(err);
-            if (err instanceof ApiError && err.status === 401) {
-                signOut();
-                navigate("/login", { replace: true, state: { from: location.pathname } });
-                return;
-            }
             setDemoError(err?.message ?? "Access check failed.");
         }
         finally {

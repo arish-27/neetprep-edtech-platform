@@ -90,11 +90,6 @@ export function VideoPlayerScreen() {
                 catch (err) {
                     if (cancelled)
                         return;
-                    if (err instanceof ApiError && err.status === 401) {
-                        signOut();
-                        navigate("/login", { replace: true, state: { from: location.pathname } });
-                        return;
-                    }
                     setAccessAllowed(false);
                     setPlayYouTubeId(null);
                     setAccessError(err?.message ?? "Access check failed.");
@@ -107,11 +102,6 @@ export function VideoPlayerScreen() {
             catch (err) {
                 if (cancelled)
                     return;
-                if (err instanceof ApiError && err.status === 401) {
-                    signOut();
-                    navigate("/login", { replace: true, state: { from: location.pathname } });
-                    return;
-                }
                 setError(err?.message ?? "Failed to load video.");
             }
             finally {
@@ -233,11 +223,6 @@ export function VideoPlayerScreen() {
                     }
                 }
                 catch (err) {
-                    if (err instanceof ApiError && err.status === 401) {
-                        signOut();
-                        navigate("/login", { replace: true, state: { from: location.pathname } });
-                        return;
-                    }
                     setAccessAllowed(false);
                     setPlayYouTubeId(null);
                     setAccessError(err?.message ?? "Retry failed.");

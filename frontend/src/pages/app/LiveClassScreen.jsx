@@ -29,6 +29,29 @@ function formatHms(ms) {
         return `${h}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
     return `${m}:${String(s).padStart(2, "0")}`;
 }
+function LiveStatusText({ liveClass }) {
+    const [nowMs, setNowMs] = useState(() => Date.now());
+    useEffect(() => {
+        const t = setInterval(() => setNowMs(Date.now()), 1000);
+        return () => clearInterval(t);
+    }, []);
+    const statusLine = useMemo(() => {
+        if (!liveClass)
+            return null;
+        const start = parseIsoMs(liveClass.starts_at);
+        const end = parseIsoMs(liveClass.ends_at);
+        const isLive = start != null && nowMs >= start && (end == null || nowMs <= end);
+        const startsIn = start != null && nowMs < start ? start - nowMs : null;
+        const endsIn = end != null && isLive ? end - nowMs : null;
+        if (isLive)
+            return `LIVE now • Ends in ${endsIn != null ? formatHms(endsIn) : "--:--"}`;
+        if (startsIn != null)
+            return `Starts in ${formatHms(startsIn)}`;
+        return "Live session";
+    }, [liveClass, nowMs]);
+    return <>{statusLine}</>;
+}
+
 export function LiveClassScreen() {
     const { user, signOut } = useAuth();
     const navigate = useNavigate();
@@ -38,11 +61,6 @@ export function LiveClassScreen() {
     const [error, setError] = useState(null);
     const [joining, setJoining] = useState(false);
     const [youtubeId, setYoutubeId] = useState(null);
-    const [nowMs, setNowMs] = useState(() => Date.now());
-    useEffect(() => {
-        const t = setInterval(() => setNowMs(Date.now()), 1000);
-        return () => clearInterval(t);
-    }, []);
     useEffect(() => {
         let cancelled = false;
         setLoading(true);
@@ -67,20 +85,6 @@ export function LiveClassScreen() {
         })();
         return () => { cancelled = true; };
     }, []);
-    const statusLine = useMemo(() => {
-        if (!liveClass)
-            return null;
-        const start = parseIsoMs(liveClass.starts_at);
-        const end = parseIsoMs(liveClass.ends_at);
-        const isLive = start != null && nowMs >= start && (end == null || nowMs <= end);
-        const startsIn = start != null && nowMs < start ? start - nowMs : null;
-        const endsIn = end != null && isLive ? end - nowMs : null;
-        if (isLive)
-            return `LIVE now • Ends in ${endsIn != null ? formatHms(endsIn) : "--:--"}`;
-        if (startsIn != null)
-            return `Starts in ${formatHms(startsIn)}`;
-        return "Live session";
-    }, [liveClass, nowMs]);
     const joinLive = async () => {
         if (!liveClass || joining)
             return;
@@ -96,11 +100,6 @@ export function LiveClassScreen() {
             setError("Live stream not available right now.");
         }
         catch (err) {
-            if (err instanceof ApiError && err.status === 401) {
-                signOut();
-                navigate("/login", { replace: true, state: { from: location.pathname } });
-                return;
-            }
             setError(err?.message ?? "Access check failed.");
         }
         finally {
@@ -125,7 +124,7 @@ export function LiveClassScreen() {
               </div>
               <div className="mt-2 text-sm font-semibold text-ink-600 dark:text-ink-300">
                 {loading ? <Skeleton className="h-4 w-72"/> : (<>
-                    {statusLine}
+                    <LiveStatusText liveClass={liveClass} />
                     {liveClass?.duration_min ? ` • ${liveClass.duration_min} mins` : ""}
                     {liveClass?.instructor ? ` • Teacher: ${liveClass.instructor}` : ""}
                   </>)}

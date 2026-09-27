@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { Activity, BarChart3, Bell, BookOpen, CalendarDays, ChevronLeft, ClipboardCheck, ClipboardList, FileText, HelpCircle, Library, LogOut, Menu, Moon, Radio, Settings, Sun, Trophy, User, Users, X, } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { Logo } from "@/components/Logo";
@@ -64,13 +64,14 @@ const sidebarItem = {
 };
 export function TeacherShell({ children }) {
     const { user, signOut } = useAuth();
+    const navigate = useNavigate();
     const location = useLocation();
     const [mobileOpen, setMobileOpen] = useState(false);
     const [collapsed, setCollapsed] = useState(false);
     const prevPath = useRef(location.pathname);
     function handleSignOut() {
         signOut();
-        window.location.replace("/");
+        navigate("/");
     }
     const theme = useAppStore((s) => s.theme);
     const toggleTheme = useAppStore((s) => s.toggleTheme);
