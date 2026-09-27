@@ -1,15 +1,15 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { BookOpen, Search, Sparkles, ChevronRight, CheckCircle2, ArrowRight } from "lucide-react";
+import { BookOpen, Search, Sparkles, ChevronRight, Stethoscope, Microscope, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import { subjects } from "@/data/mockData";
 import { api, apiSubjectToKey } from "@/lib/api";
 import {
-  WhippedCoffeeCup,
-  StrawberryCakeSlice,
-  ChocolateHeartCake,
-  LavenderBerryCake,
-  LatteArtCup,
+  HeroMedicalVisual,
+  PhysicsVisual,
+  ChemistryVisual,
+  BiologyVisual,
+  StudyLoungeVisual,
 } from "@/components/coffee/CoffeeVisuals";
 
 // ── Subject Details & Theme Mapping (Exact Match to Template Palette) ───────────
@@ -23,12 +23,12 @@ const SUBJECT_THEMES = {
     pillText: "#52272B",
     progressTrack: "#F2BAC0",
     progressBar: "#52272B",
-    cursiveTag: "Gohsn Mud Anore",
-    metaText: "Mechanics, Optics & Electrodynamics",
+    cursiveTag: "Mechanics, Optics & Electrodynamics",
+    metaText: "High-Yield Formulas & Numericals",
     chaptersCount: 3,
     videosCount: 12,
     quizzesCount: 3,
-    Component: StrawberryCakeSlice,
+    Component: PhysicsVisual,
   },
   chemistry: {
     bg: "#FBE5CF",
@@ -39,12 +39,12 @@ const SUBJECT_THEMES = {
     pillText: "#52321C",
     progressTrack: "#F4D0B0",
     progressBar: "#52321C",
-    cursiveTag: "Graos Jauo Are",
-    metaText: "Organic & Reaction Mechanisms",
+    cursiveTag: "Organic, Physical & Inorganic",
+    metaText: "Reactions & Mechanism Vault",
     chaptersCount: 3,
     videosCount: 10,
     quizzesCount: 3,
-    Component: ChocolateHeartCake,
+    Component: ChemistryVisual,
   },
   biology: {
     bg: "#E3D4E6",
@@ -55,12 +55,12 @@ const SUBJECT_THEMES = {
     pillText: "#492C51",
     progressTrack: "#D8C0DC",
     progressBar: "#492C51",
-    cursiveTag: "Hoyes Tind Apis",
-    metaText: "NCERT Botany & Human Physiology",
+    cursiveTag: "Botany, Zoology & Physiology",
+    metaText: "100% NCERT Mastery & Diagrams",
     chaptersCount: 3,
     videosCount: 16,
     quizzesCount: 3,
-    Component: LavenderBerryCake,
+    Component: BiologyVisual,
   },
 };
 
@@ -108,17 +108,17 @@ export function SubjectsScreen() {
         color: "#3B2318",
       }}
     >
-      {/* ── Top Header Brand / Nav Bar (Matching Template) ── */}
+      {/* ── Top Header Brand / Nav Bar (Preserves template layout with medical branding) ── */}
       <div className="max-w-6xl mx-auto flex items-center justify-between py-2 mb-6 border-b border-[#E8DDD1]/70">
         <div className="flex items-center gap-3">
           <span
             className="text-3xl font-serif font-black tracking-tight select-none"
             style={{ color: "#3B2318" }}
           >
-            Coffee
+            NEET Prep
           </span>
           <span className="hidden sm:inline-block text-xs uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-[#EAD8CA] text-[#5A3828] font-bold">
-            NEET Edition
+            Medical Academy
           </span>
         </div>
 
@@ -146,8 +146,8 @@ export function SubjectsScreen() {
             NCERT Vault
           </Link>
           <div className="flex items-center gap-2 pl-2 border-l border-[#E2D1C1]">
-            <div className="w-8 h-8 rounded-full bg-[#EAD6D8] border border-[#D8BAC0] flex items-center justify-center text-xs font-bold text-[#55272C]">
-              🎓
+            <div className="w-8 h-8 rounded-full bg-[#EAD6D8] border border-[#D8BAC0] flex items-center justify-center text-xs font-bold text-[#52272B]">
+              🩺
             </div>
           </div>
         </div>
@@ -195,9 +195,9 @@ export function SubjectsScreen() {
                   textShadow: "0 2px 10px rgba(30,15,10,0.3)",
                 }}
               >
-                Sweet Moments
+                Your Medical Dream
                 <br />
-                Start Here.
+                Starts Here.
               </h1>
 
               <p className="text-sm sm:text-base font-normal leading-relaxed text-[#EDE1D4] max-w-lg">
@@ -226,9 +226,9 @@ export function SubjectsScreen() {
               </div>
             </div>
 
-            {/* Right Hero Cup Visual */}
+            {/* Right Hero Visual: 3D Medical Caduceus & Stethoscope Emblem */}
             <div className="md:col-span-5 flex justify-center md:justify-end">
-              <WhippedCoffeeCup className="w-60 h-60 md:w-80 md:h-72" />
+              <HeroMedicalVisual className="w-60 h-60 md:w-80 md:h-72" />
             </div>
           </div>
 
@@ -250,32 +250,32 @@ export function SubjectsScreen() {
 
         {/* ── Mid Feature Badges & Search Row ── */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-2">
-          {/* Two Cute Feature Badges (Matching 'Open St.' and 'Nomurigans') */}
+          {/* Two Science Badges matching template pill layout */}
           <div className="flex items-center gap-6 sm:gap-8">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#EAD8CA] flex items-center justify-center text-lg shadow-sm">
-                ☕
+              <div className="w-10 h-10 rounded-full bg-[#EAD8CA] flex items-center justify-center text-[#5A3828] shadow-sm">
+                <Stethoscope className="w-5 h-5" />
               </div>
               <div>
                 <div className="text-sm font-bold font-serif text-[#3B2318]">
-                  Open St.
+                  NCERT Aligned
                 </div>
                 <div className="text-xs text-[#7A5B4C] font-medium">
-                  High-Yield NCERT Focus
+                  Comprehensive 11th & 12th
                 </div>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#EAD6D8] flex items-center justify-center text-lg shadow-sm">
-                🧁
+              <div className="w-10 h-10 rounded-full bg-[#EAD6D8] flex items-center justify-center text-[#52272B] shadow-sm">
+                <Microscope className="w-5 h-5" />
               </div>
               <div>
                 <div className="text-sm font-bold font-serif text-[#3B2318]">
-                  Nomurigans
+                  Top Faculty
                 </div>
                 <div className="text-xs text-[#7A5B4C] font-medium">
-                  Faculty Masterclasses
+                  Expert Doctors & Educators
                 </div>
               </div>
             </div>
@@ -299,7 +299,7 @@ export function SubjectsScreen() {
           </div>
         </div>
 
-        {/* ── The 3 Core Subject Cards (Centerpiece of Template) ── */}
+        {/* ── The 3 Core Subject Cards (Physics, Chemistry, Biology) ── */}
         <motion.div
           className="grid gap-6 md:grid-cols-3"
           variants={{
@@ -352,7 +352,7 @@ export function SubjectsScreen() {
                     </p>
                   </div>
 
-                  {/* Centered Delectable SVG Visual */}
+                  {/* Centered Science SVG Visual (Atom / Flask / DNA) */}
                   <div className="my-2 py-2 flex items-center justify-center transform group-hover:scale-105 transition-transform duration-300">
                     <VisualComponent className="w-48 h-40" />
                   </div>
@@ -394,7 +394,7 @@ export function SubjectsScreen() {
                     </div>
                   </div>
 
-                  {/* Bottom Cursive Script Banner Tag (Matches template's 'Gohsn Nud Anore') */}
+                  {/* Bottom Subject Specialization Banner Tag */}
                   <div className="mt-6 pt-4 border-t border-black/5 flex items-center justify-between">
                     <span
                       className="font-serif italic text-sm tracking-wide font-bold"
@@ -419,7 +419,7 @@ export function SubjectsScreen() {
           })}
         </motion.div>
 
-        {/* ── BOTTOM SECTION: Matches 'MUn Coffee' in Template ── */}
+        {/* ── BOTTOM SECTION: NEET Study Lounge with Medical Books & Stethoscope ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -428,9 +428,9 @@ export function SubjectsScreen() {
           style={{ backgroundColor: "#FFFFFF" }}
         >
           <div className="grid md:grid-cols-12 gap-6 items-center">
-            {/* Left: Heart Latte Art Visual */}
+            {/* Left: Open Medical Textbook & Stethoscope Visual */}
             <div className="md:col-span-4 flex justify-center">
-              <LatteArtCup className="w-52 h-44" />
+              <StudyLoungeVisual className="w-52 h-44" />
             </div>
 
             {/* Right: Description & Action */}
@@ -443,7 +443,7 @@ export function SubjectsScreen() {
                   className="text-2xl sm:text-3xl font-serif font-black tracking-tight"
                   style={{ color: "#3B2318" }}
                 >
-                  MUn Coffee · NEET Mastery
+                  Medical Revision Hub · Daily Mastery
                 </h3>
               </div>
 
@@ -453,7 +453,7 @@ export function SubjectsScreen() {
                 high-yield MCQs, and solve previous year question papers.
               </p>
 
-              {/* Action Button (Matches template's 'No um Away >' button) */}
+              {/* Action Button */}
               <div className="pt-2">
                 <Link
                   to="/app/subjects/physics/chapters"
