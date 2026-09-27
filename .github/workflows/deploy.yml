@@ -38,14 +38,7 @@ jobs:
         env:
           GITHUB_PAGES: "true"
           CI: "false"
-          NODE_OPTIONS: "--max-old-space-size=4096"
-        run: |
-          if ! npm run build > build_output.txt 2>&1; then
-            cat build_output.txt
-            ERR_MSG=$(head -n 20 build_output.txt | tr '\n' ' ' | tr '\r' ' ')
-            echo "::error title=ViteBuildError::$ERR_MSG"
-            exit 1
-          fi
+        run: npm run build
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
