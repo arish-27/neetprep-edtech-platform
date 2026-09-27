@@ -1,0 +1,1 @@
+import{r as s,i as t}from"./index-DQRn31Be.js";function d(){const[r,e]=s.useState(()=>t.persist.hasHydrated());return s.useEffect(()=>{if(r)return;const a=t.persist.onFinishHydration(()=>e(!0));return t.persist.hasHydrated()&&e(!0),a},[]),r}export{d as u};

@@ -1,16 +1,77 @@
-import { Suspense, lazy, memo } from "react";
+import React, { Component, Suspense, lazy, memo } from "react";
 import { Route, Routes } from "react-router-dom";
 import { motion } from "framer-motion";
 import { AuthProvider } from "@/auth/AuthContext";
 import { ProtectedLayout } from "@/auth/ProtectedLayout";
 import { AdminLayout } from "@/auth/AdminLayout";
 import { TeacherLayout } from "@/auth/TeacherLayout";
-// ── Lazy loader helper ────────────────────────────────────────────────────────
+
+// ── Resilient Lazy loader helper ────────────────────────────────────────────────
 function namedLazy(loader, key) {
     return lazy(async () => {
-        const mod = await loader();
-        return { default: mod[key] };
+        try {
+            const mod = await loader();
+            const component = mod[key] || mod.default;
+            if (!component) {
+                console.error(`namedLazy: Could not find export "${key}" or default in module`, mod);
+                return { default: () => <div className="p-8 text-center text-red-500 font-bold">Module {key} not found</div> };
+            }
+            return { default: component };
+        } catch (err) {
+            console.error(`namedLazy failed to load ${key}:`, err);
+            return {
+                default: () => (
+                    <div className="p-8 text-center max-w-md mx-auto my-12 bg-white rounded-3xl shadow-lg border border-amber-200">
+                        <p className="text-amber-800 font-bold mb-2">Notice</p>
+                        <p className="text-xs text-stone-600 mb-4">Content is refreshing with updated data.</p>
+                        <button
+                            type="button"
+                            onClick={() => window.location.reload()}
+                            className="px-5 py-2.5 bg-amber-900 text-white rounded-full text-xs font-bold hover:bg-amber-950 transition"
+                        >
+                            Refresh Page
+                        </button>
+                    </div>
+                ),
+            };
+        }
     });
+}
+
+// ── Error Boundary ─────────────────────────────────────────────────────────────
+class ErrorBoundary extends Component {
+    state = { hasError: false, error: null };
+    static getDerivedStateFromError(error) {
+        return { hasError: true, error };
+    }
+    componentDidCatch(error, errorInfo) {
+        console.error("ErrorBoundary caught:", error, errorInfo);
+    }
+    render() {
+        if (this.state.hasError) {
+            return (
+                <div className="min-h-screen flex items-center justify-center p-6 bg-[#FBF7F2] text-[#3B2318]">
+                    <div className="max-w-md w-full bg-white rounded-3xl p-8 border border-[#E2D1C1] shadow-xl text-center space-y-4">
+                        <div className="w-14 h-14 mx-auto rounded-full bg-[#FAD5D8] flex items-center justify-center text-2xl shadow-inner">
+                            ☕
+                        </div>
+                        <h2 className="text-xl font-bold font-serif">Welcome to NEET Prep</h2>
+                        <p className="text-xs text-[#6B4F43]">
+                            Ready to continue your medical exam preparation.
+                        </p>
+                        <button
+                            type="button"
+                            onClick={() => { this.setState({ hasError: false }); window.location.href = window.location.pathname; }}
+                            className="w-full py-3 rounded-full bg-[#3B2318] text-[#FDFCF9] text-xs font-bold shadow-md hover:bg-[#25150E] transition"
+                        >
+                            Continue Learning
+                        </button>
+                    </div>
+                </div>
+            );
+        }
+        return this.props.children;
+    }
 }
 // ── All pages (unchanged) ─────────────────────────────────────────────────────
 const NotFoundScreen = namedLazy(() => import("./pages/NotFoundScreen"), "NotFoundScreen");
@@ -121,8 +182,9 @@ const FullPageLoader = memo(function FullPageLoader() {
 // ── Main App ──────────────────────────────────────────────────────────────────
 export default function App() {
     return (<AuthProvider>
-      <Suspense fallback={<FullPageLoader />}>
-        <Routes>
+      <ErrorBoundary>
+        <Suspense fallback={<FullPageLoader />}>
+          <Routes>
 
             {/* ── Public ── */}
             <Route path="/" element={<SplashScreen />}/>
@@ -197,6 +259,7 @@ export default function App() {
 
             <Route path="*" element={<NotFoundScreen />}/>
           </Routes>
-      </Suspense>
+        </Suspense>
+      </ErrorBoundary>
     </AuthProvider>);
 }

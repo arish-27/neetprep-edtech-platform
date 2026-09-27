@@ -1,0 +1,1 @@
+import{r as i,j as r,D as t}from"./index-DQRn31Be.js";function f({src:e,alt:a="",className:s,fallbackClassName:l}){const[o,u]=i.useState(!1);return!e||o?r.jsx("div",{className:t("h-full w-full bg-gradient-to-br from-byjus-800/40 to-ink-950/40",l)}):r.jsx("img",{src:e,alt:a,className:t("h-full w-full object-cover",s),loading:"lazy",onError:()=>u(!0)})}export{f as T};
