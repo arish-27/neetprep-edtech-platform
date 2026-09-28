@@ -80,20 +80,20 @@ export function TeacherShell({ children }) {
     useEffect(() => { setMobileOpen(false); }, [location.pathname]);
     useEffect(() => { prevPath.current = location.pathname; }, [location.pathname]);
     const currentLabel = allItems.find((i) => i.end ? location.pathname === i.to : location.pathname.startsWith(i.to))?.label ?? "Teacher Portal";
-    const sidebarBg = isDark ? "rgba(11,15,26,0.85)" : "#FFFFFF";
-    const sidebarBorder = isDark ? "1px solid rgba(255,255,255,0.08)" : "1px solid #E8E5E0";
+    const sidebarBg = isDark ? "#261A13" : "#F7F1EA";
+    const sidebarBorder = isDark ? "1px solid rgba(234,216,202,0.14)" : "1px solid #EAE0D5";
     const sidebarShadow = isDark
-        ? "4px 0 24px rgba(0,0,0,0.4), 0 0 40px rgba(139,92,246,0.08)"
-        : "2px 0 12px rgba(0,0,0,0.05)";
-    const groupLabelColor = isDark ? "#6B7280" : "#6B7280";
-    const iconColor = isDark ? "#9CA3AF" : "#6B7280";
-    const userNameColor = isDark ? "#FFFFFF" : "#111827";
-    const userEmailColor = isDark ? "#9CA3AF" : "#6B7280";
+        ? "4px 0 24px rgba(0,0,0,0.6)"
+        : "2px 0 16px rgba(59,35,24,0.06)";
+    const groupLabelColor = isDark ? "#D5C4B5" : "#8C6F5E";
+    const iconColor = isDark ? "#D5C4B5" : "#6C5243";
+    const userNameColor = isDark ? "#FAF4EE" : "#3B2318";
+    const userEmailColor = isDark ? "#D5C4B5" : "#7A5C4D";
     const avatarBg = isDark
-        ? "linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)"
-        : "linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)";
+        ? "linear-gradient(135deg, #845543 0%, #5A3828 100%)"
+        : "linear-gradient(135deg, #5A3828 0%, #3B2318 100%)";
     return (<div style={{
-            background: isDark ? "transparent" : "rgba(251,248,243,0.85)",
+            background: isDark ? "#1C130E" : "#FBF7F2",
             minHeight: "100vh",
             transition: "background 0.35s ease",
         }}>
@@ -205,28 +205,28 @@ export function TeacherShell({ children }) {
       <div style={{ marginLeft: W, minHeight: "100vh", transition: "margin-left 0.3s cubic-bezier(.16,1,.3,1)" }}>
         {/* Header */}
         <header className="sticky top-0 z-40 flex h-16 items-center justify-between gap-4 border-b px-6" style={{
-            background: isDark ? "rgba(11,15,26,0.80)" : "rgba(255,255,255,0.95)",
-            borderColor: isDark ? "rgba(255,255,255,0.08)" : "#E8E5E0",
+            background: isDark ? "rgba(38,26,19,0.92)" : "rgba(251,247,242,0.94)",
+            borderColor: isDark ? "rgba(234,216,202,0.14)" : "#EAE0D5",
             backdropFilter: "blur(24px)",
             WebkitBackdropFilter: "blur(24px)",
             boxShadow: isDark
-                ? "0 4px 24px rgba(0,0,0,0.4), 0 0 40px rgba(139,92,246,0.06)"
-                : "0 1px 3px rgba(0,0,0,0.04)",
+                ? "0 4px 20px rgba(0,0,0,0.4)"
+                : "0 1px 3px rgba(59,35,24,0.04)",
         }}>
           <div className="flex items-center gap-3">
             <motion.button type="button" onClick={() => setMobileOpen(true)} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="grid h-9 w-9 place-items-center rounded-xl border transition md:hidden focus-ring" style={{
-            background: isDark ? "rgba(255,255,255,0.05)" : "#F5F2ED",
-            borderColor: isDark ? "rgba(255,255,255,0.1)" : "#E8E5E0",
-            color: isDark ? "#9CA3AF" : "#6B7280",
+            background: isDark ? "#34241B" : "#EFE6DC",
+            borderColor: isDark ? "rgba(234,216,202,0.16)" : "#DFCFC0",
+            color: isDark ? "#EAE0D5" : "#4A2E20",
         }}>
               <Menu className="h-4 w-4"/>
             </motion.button>
             <AnimatePresence mode="wait">
               <motion.div key={currentLabel} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.18 }}>
-                <h1 className="text-base font-bold" style={{ color: isDark ? "#FFFFFF" : "#111827" }}>
+                <h1 className="text-base font-bold" style={{ color: isDark ? "#FAF4EE" : "#3B2318" }}>
                   {currentLabel}
                 </h1>
-                <p className="text-xs" style={{ color: isDark ? "#6B7280" : "#6B7280" }}>Teacher Portal</p>
+                <p className="text-xs" style={{ color: isDark ? "#D5C4B5" : "#8C6F5E" }}>Teacher Portal</p>
               </motion.div>
             </AnimatePresence>
           </div>
@@ -234,9 +234,9 @@ export function TeacherShell({ children }) {
           <div className="flex items-center gap-2">
             {/* Theme toggle */}
             <motion.button type="button" onClick={toggleTheme} whileHover={{ scale: 1.08, rotate: 15 }} whileTap={{ scale: 0.92 }} className="grid h-9 w-9 place-items-center rounded-xl border transition focus-ring" style={{
-            background: isDark ? "rgba(255,255,255,0.06)" : "#F5F2ED",
-            borderColor: isDark ? "rgba(255,255,255,0.1)" : "#E8E5E0",
-            color: isDark ? "#9CA3AF" : "#6B7280",
+            background: isDark ? "#34241B" : "#EFE6DC",
+            borderColor: isDark ? "rgba(234,216,202,0.16)" : "#DFCFC0",
+            color: isDark ? "#EAE0D5" : "#4A2E20",
         }}>
               <AnimatePresence mode="wait">
                 <motion.span key={theme} initial={{ opacity: 0, rotate: -90, scale: 0.5 }} animate={{ opacity: 1, rotate: 0, scale: 1 }} exit={{ opacity: 0, rotate: 90, scale: 0.5 }} transition={{ duration: 0.2 }} style={{ display: "flex" }}>
@@ -251,10 +251,10 @@ export function TeacherShell({ children }) {
             borderColor: isDark ? "rgba(255,255,255,0.1)" : "#E8E5E0",
             boxShadow: isDark ? "0 0 20px rgba(139,92,246,0.1)" : "0 1px 3px rgba(0,0,0,0.04)",
         }} whileHover={{ scale: 1.02 }} transition={SPRING}>
-              <div className="grid h-7 w-7 place-items-center rounded-lg text-xs font-bold text-white" style={{ background: "linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)" }}>
+              <div className="grid h-7 w-7 place-items-center rounded-lg text-xs font-bold text-white shadow-sm" style={{ background: avatarBg }}>
                 {(user?.name ?? "T").charAt(0).toUpperCase()}
               </div>
-              <span className="hidden text-sm font-medium lg:block" style={{ color: isDark ? "#E5E7EB" : "#1A1D2E" }}>
+              <span className="hidden text-sm font-medium lg:block" style={{ color: isDark ? "#FAF4EE" : "#3B2318" }}>
                 {user?.name ?? "Teacher"}
               </span>
             </motion.div>

@@ -99,35 +99,35 @@ export function AppShell({ children }) {
     }, []);
     // Close ONLY mobile sidebar on route change — keep moreOpen intact for desktop
     useEffect(() => { setSidebarOpen(false); }, [location.pathname]);
-    // ── Derived theme values ────────────────────────────────────────────────────
-    const pageBg = isDark ? "transparent" : "rgba(251,248,243,0.85)";
-    const sidebarBg = isDark ? "rgba(11,15,26,0.85)" : "#FFFFFF";
-    const sidebarBorder = isDark ? "rgba(255,255,255,0.08)" : "#E8E5E0";
+    // ── Derived theme values (Warm Luxury Coffee & Mocha Palette) ───────────────
+    const pageBg = isDark ? "#1C130E" : "#FBF7F2";
+    const sidebarBg = isDark ? "#261A13" : "#F7F1EA";
+    const sidebarBorder = isDark ? "rgba(234,216,202,0.14)" : "#EAE0D5";
     const sidebarShadow = isDark
-        ? "0 4px 24px rgba(0,0,0,0.6), 0 0 40px rgba(139,92,246,0.08)"
-        : "0 4px 20px rgba(0,0,0,0.08)";
-    const headerBg = isDark ? "rgba(11,15,26,0.80)" : "rgba(255,255,255,0.95)";
-    const headerBorder = isDark ? "rgba(255,255,255,0.08)" : "#E8E5E0";
+        ? "0 4px 24px rgba(0,0,0,0.6)"
+        : "0 4px 24px rgba(59,35,24,0.06), 0 1px 4px rgba(59,35,24,0.04)";
+    const headerBg = isDark ? "rgba(38,26,19,0.92)" : "rgba(251,247,242,0.94)";
+    const headerBorder = isDark ? "rgba(234,216,202,0.14)" : "#EAE0D5";
     const headerShadow = isDark
-        ? "0 4px 24px rgba(0,0,0,0.4), 0 0 40px rgba(139,92,246,0.06)"
-        : "0 2px 12px rgba(0,0,0,0.06)";
-    const btnBg = isDark ? "rgba(255,255,255,0.06)" : "#F5F2ED";
-    const btnBorder = isDark ? "rgba(255,255,255,0.1)" : "#E8E5E0";
-    const btnColor = isDark ? "#9CA3AF" : "#6B7280";
-    const userCardBg = isDark ? "rgba(255,255,255,0.04)" : "#F5F2ED";
-    const userCardBorder = isDark ? "rgba(255,255,255,0.08)" : "#E8E5E0";
-    const textPrimary = isDark ? "#FFFFFF" : "#1A1D2E";
-    const textSecondary = isDark ? "#9CA3AF" : "#6B7280";
-    const mobileBg = isDark ? "#0A0F1C" : "#FFFFFF";
-    const mobileNavBg = isDark ? "#0A0F1C" : "#FFFFFF";
-    const mobileNavBorder = isDark ? "rgba(255,255,255,0.08)" : "#E8E5E0";
-    // Light mode: dark readable text; Dark mode: bright white text
+        ? "0 4px 20px rgba(0,0,0,0.4)"
+        : "0 2px 14px rgba(59,35,24,0.05)";
+    const btnBg = isDark ? "#34241B" : "#EFE6DC";
+    const btnBorder = isDark ? "rgba(234,216,202,0.16)" : "#DFCFC0";
+    const btnColor = isDark ? "#EAE0D5" : "#4A2E20";
+    const userCardBg = isDark ? "#34241B" : "#EFE6DC";
+    const userCardBorder = isDark ? "rgba(234,216,202,0.16)" : "#DFCFC0";
+    const textPrimary = isDark ? "#FAF4EE" : "#3B2318";
+    const textSecondary = isDark ? "#D5C4B5" : "#7A5C4D";
+    const mobileBg = isDark ? "#261A13" : "#F7F1EA";
+    const mobileNavBg = isDark ? "#261A13" : "#F7F1EA";
+    const mobileNavBorder = isDark ? "rgba(234,216,202,0.14)" : "#EAE0D5";
+    // Warm luxury coffee navigation pills:
     const navActive = isDark
-        ? "bg-[rgba(139,92,246,0.25)] text-white shadow-[0_0_20px_rgba(139,92,246,0.2)] font-bold"
-        : "bg-gradient-to-r from-[#EDE9FE] to-[#DDD6FE] text-[#5B21B6] font-bold";
+        ? "bg-[#845543] text-[#FFF9F3] shadow-md shadow-[#845543]/20 font-bold"
+        : "bg-[#4A2E20] text-[#FFF9F3] shadow-md shadow-[#4A2E20]/20 font-bold";
     const navInactive = isDark
-        ? "text-[#9CA3AF] hover:bg-[rgba(139,92,246,0.15)] hover:text-white"
-        : "text-[#374151] hover:bg-[#F3F0FF] hover:text-[#5B21B6]";
+        ? "text-[#D5C4B5] hover:bg-[#34241B] hover:text-[#FAF4EE]"
+        : "text-[#6C5243] hover:bg-[#EFE6DC] hover:text-[#3B2318]";
     const linkBase = "group flex items-center gap-3 rounded-2xl px-3 py-2.5 text-sm font-semibold transition-all duration-200";
     return (<div style={{ minHeight: "100vh", background: pageBg, transition: "background 0.35s ease" }}>
 
@@ -197,7 +197,7 @@ export function AppShell({ children }) {
         <div className="shrink-0 pt-3">
           <div className={cn("rounded-2xl border p-3", sidebarCollapsed ? "flex flex-col items-center gap-2" : "space-y-2")} style={{ background: userCardBg, borderColor: userCardBorder }}>
             {sidebarCollapsed ? (<>
-                <div className="grid h-8 w-8 place-items-center rounded-xl text-white" style={{ background: "linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)" }}>
+                <div className="grid h-8 w-8 place-items-center rounded-xl text-white shadow-sm" style={{ background: "linear-gradient(135deg, #5A3828 0%, #3B2318 100%)", border: "1px solid rgba(234, 216, 202, 0.3)" }}>
                   <User className="h-4 w-4"/>
                 </div>
                 {[
@@ -209,7 +209,7 @@ export function AppShell({ children }) {
                   </button>))}
               </>) : (<>
                 <div className="flex items-center gap-2 min-w-0">
-                  <div className="grid h-7 w-7 shrink-0 place-items-center rounded-lg text-white" style={{ background: "linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)" }}>
+                  <div className="grid h-7 w-7 shrink-0 place-items-center rounded-lg text-white shadow-sm" style={{ background: "linear-gradient(135deg, #5A3828 0%, #3B2318 100%)", border: "1px solid rgba(234, 216, 202, 0.3)" }}>
                     <User className="h-3.5 w-3.5"/>
                   </div>
                   <div className="min-w-0 flex-1 overflow-hidden">
@@ -327,7 +327,7 @@ export function AppShell({ children }) {
 
                   {/* Profile */}
                   <Link to="/app/profile" className="hidden md:flex items-center gap-2 rounded-2xl px-2 py-2 lg:px-3 text-sm font-extrabold transition focus-ring" style={{ border: `1px solid ${btnBorder}`, background: btnBg, color: textPrimary }}>
-                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-2xl text-white" style={{ background: "linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)" }}>
+                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-2xl text-white shadow-sm" style={{ background: "linear-gradient(135deg, #5A3828 0%, #3B2318 100%)", border: "1px solid rgba(234, 216, 202, 0.3)" }}>
                       <User className="h-4 w-4"/>
                     </span>
                     <span className="hidden lg:block truncate max-w-[120px]">{user?.name ?? "Student"}</span>
@@ -357,9 +357,9 @@ export function AppShell({ children }) {
       <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
         <div className="mx-auto max-w-[1280px] px-4 pb-4">
           <div className="rounded-3xl px-2 py-2" style={{
-            background: isDark ? "rgba(11,15,26,0.85)" : mobileNavBg,
+            background: isDark ? "#261A13" : mobileNavBg,
             border: `1px solid ${mobileNavBorder}`,
-            boxShadow: isDark ? "0 -4px 24px rgba(0,0,0,0.5), 0 0 40px rgba(139,92,246,0.08)" : "0 -2px 12px rgba(0,0,0,0.08)",
+            boxShadow: isDark ? "0 -4px 24px rgba(0,0,0,0.5)" : "0 -2px 14px rgba(59,35,24,0.06)",
             backdropFilter: isDark ? "blur(24px)" : "none",
             WebkitBackdropFilter: isDark ? "blur(24px)" : "none",
         }}>
@@ -367,8 +367,8 @@ export function AppShell({ children }) {
               {mobileNav.map((item) => {
             const Icon = item.icon;
             return (<NavLink key={item.to} to={item.to} end={item.end} className={({ isActive }) => cn("flex flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 text-[11px] font-extrabold transition focus-ring", isActive
-                    ? isDark ? "bg-[rgba(139,92,246,0.25)] text-white" : "bg-gradient-to-r from-[#F5F2ED] to-[#EDE9FE] text-[#6C5CE7]"
-                    : isDark ? "text-[#9CA3AF] hover:bg-[rgba(139,92,246,0.1)] hover:text-white" : "text-[#6B7280] hover:bg-[#F5F2ED] hover:text-[#1A1D2E]")}>
+                    ? isDark ? "bg-[#845543] text-[#FFF9F3]" : "bg-[#4A2E20] text-[#FFF9F3] shadow-sm font-bold"
+                    : isDark ? "text-[#D5C4B5] hover:bg-[#34241B]" : "text-[#6C5243] hover:bg-[#EFE6DC] hover:text-[#3B2318]")}>
                     <Icon className="h-5 w-5"/>
                     <span className="truncate">{item.label}</span>
                   </NavLink>);

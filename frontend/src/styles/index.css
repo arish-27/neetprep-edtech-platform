@@ -8,60 +8,67 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 :root {
-  /* Brand Colors */
-  --purple:        #8B5CF6;
-  --purple-dark:   #6D28D9;
-  --purple-bright: #A78BFA;
-  --green:         #22C55E;
-  --green-dark:    #16A34A;
-  --orange:        #F97316;
-  --pink:          #EC4899;
-  --blue:          #3B82F6;
+  /* Brand Colors (Artisan Roasted Coffee & Medical Palette) */
+  --espresso:      #3B2318;
+  --cocoa:         #5A3828;
+  --caramel:       #D97706;
+  --rose-cream:    #FAD5D8;
+  --caramel-cream: #FBE5CF;
+  --lavender-cream:#E3D4E6;
+  --purple:        #5A3828;
+  --purple-dark:   #3B2318;
+  --purple-bright: #845543;
+  --green:         #15803D;
+  --green-dark:    #166534;
+  --orange:        #D97706;
+  --pink:          #C2410C;
+  --blue:          #2563EB;
 
-  /* Light Mode (Cream/Beige) */
-  --bg-page:       #FBF8F3;
+  /* Light Mode (Artisan Cream / Milk-Foam) */
+  --bg-page:       #FBF7F2;
   --bg-card:       #FFFFFF;
-  --bg-sidebar:    #FFFFFF;
-  --bg-input:      #F8F9FF;
-  --bg-hover:      #F5F2ED;
-  --text-primary:   #1A1D2E;
-  --text-secondary: #6B7280;
-  --text-muted:     #9CA3AF;
-  --border:         #E8E5E0;
-  --shadow-card:  0 2px 12px rgba(0,0,0,0.06);
-  --shadow-hover: 0 4px 20px rgba(0,0,0,0.08);
+  --bg-sidebar:    #F7F1EA;
+  --bg-input:      #FDFBF7;
+  --bg-hover:      #EFE6DC;
+  --text-primary:   #3B2318;
+  --text-secondary: #6B4F43;
+  --text-muted:     #8C6F5E;
+  --border:         #EAE0D5;
+  --border-strong:  #DFD3C4;
+  --shadow-card:  0 2px 14px rgba(59,35,24,0.05);
+  --shadow-hover: 0 6px 24px rgba(59,35,24,0.08);
 }
 
-/* ── TRUE PREMIUM DARK MODE ────────────────────────────────────────────────── */
+/* ── LUXURY ESPRESSO ROAST DARK MODE ────────────────────────────────────────── */
 .dark {
-  /* Backgrounds - transparent so animated bg shows through */
-  --bg-page:       transparent;
-  --bg-secondary:  rgba(17,24,39,0.6);
-  --bg-sidebar:    rgba(11,15,26,0.85);
-  --bg-card:       rgba(255,255,255,0.05);
-  --bg-input:      rgba(255,255,255,0.07);
-  --bg-hover:      rgba(139,92,246,0.15);
+  /* Deep Roasted Coffee Beans / Mocha Dark */
+  --bg-page:       #1C130E;
+  --bg-secondary:  #281C15;
+  --bg-sidebar:    #221610;
+  --bg-card:       #2A1D16;
+  --bg-input:      #34241B;
+  --bg-hover:      rgba(132, 85, 67, 0.25);
 
-  /* Text - HIGH CONTRAST */
-  --text-primary:   #FFFFFF;
-  --text-secondary: #D1D5DB;
-  --text-muted:     #9CA3AF;
-  --text-dim:       #6B7280;
+  /* Text - Warm Alabaster & Cream */
+  --text-primary:   #FAF4EE;
+  --text-secondary: #D5C4B5;
+  --text-muted:     #9E8675;
+  --text-dim:       #806A5B;
 
-  /* Borders - VISIBLE */
-  --border:         rgba(255,255,255,0.1);
-  --border-strong:  rgba(255,255,255,0.15);
-  --border-glow:    rgba(139,92,246,0.4);
+  /* Borders - Warm Cocoa Parchment */
+  --border:         rgba(234,216,202,0.14);
+  --border-strong:  rgba(234,216,202,0.22);
+  --border-glow:    rgba(132,85,67,0.4);
 
-  /* Shadows - DEEP with GLOW */
-  --shadow-card:  0 8px 32px rgba(0,0,0,0.5), 0 0 40px rgba(139,92,246,0.08);
-  --shadow-hover: 0 12px 48px rgba(0,0,0,0.6), 0 0 60px rgba(139,92,246,0.18);
-  --shadow-btn:   0 8px 24px rgba(139,92,246,0.4), 0 0 32px rgba(139,92,246,0.2);
+  /* Shadows - Deep Coffee */
+  --shadow-card:  0 8px 32px rgba(0,0,0,0.5);
+  --shadow-hover: 0 12px 48px rgba(0,0,0,0.6);
+  --shadow-btn:   0 4px 16px rgba(90,56,40,0.3);
   
-  /* Glow Effects */
-  --glow-purple:  0 0 24px rgba(139,92,246,0.35);
-  --glow-green:   0 0 24px rgba(34,197,94,0.35);
-  --glow-pink:    0 0 24px rgba(236,72,153,0.35);
+  /* Ambient Tones */
+  --glow-purple:  0 0 24px rgba(132,85,67,0.3);
+  --glow-green:   0 0 24px rgba(34,197,94,0.25);
+  --glow-pink:    0 0 24px rgba(250,213,216,0.25);
 }
 
 /* ── Base ──────────────────────────────────────────────────────────────────── */
@@ -418,70 +425,70 @@
     width: 4px;
   }
 
-  /* ── Buttons with STRONG Glow ── */
+  /* ── Buttons with Luxury Coffee Style ── */
   .btn-purple {
-    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
-    color: #FFFFFF;
+    background: linear-gradient(135deg, #4A2E20 0%, #3B2318 100%);
+    color: #FAF4EE;
     font-weight: 700;
     border-radius: 0.75rem;
-    box-shadow: var(--shadow-btn);
+    box-shadow: 0 4px 14px rgba(59,35,24,0.18);
     transition: all 0.25s ease;
   }
   .btn-purple:hover { 
-    transform: translateY(-3px) scale(1.03); 
-    box-shadow: 0 12px 32px rgba(139,92,246,0.5), 0 0 48px rgba(139,92,246,0.4); 
+    transform: translateY(-2px) scale(1.02); 
+    box-shadow: 0 8px 24px rgba(59,35,24,0.28); 
   }
   .btn-purple:active { transform: translateY(0) scale(0.97); }
 
   .btn-green {
-    background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+    background: linear-gradient(135deg, #15803D 0%, #166534 100%);
     color: #FFFFFF;
     font-weight: 700;
     border-radius: 0.75rem;
-    box-shadow: 0 8px 24px rgba(34,197,94,0.4), 0 0 32px rgba(34,197,94,0.2);
+    box-shadow: 0 4px 14px rgba(21,128,61,0.25);
     transition: all 0.25s ease;
   }
   .btn-green:hover { 
-    transform: translateY(-3px) scale(1.03); 
-    box-shadow: 0 12px 32px rgba(34,197,94,0.5), 0 0 48px rgba(34,197,94,0.3);
+    transform: translateY(-2px) scale(1.02); 
+    box-shadow: 0 8px 24px rgba(21,128,61,0.35);
   }
   .btn-green:active { transform: translateY(0) scale(0.97); }
 
   .btn-orange {
-    background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+    background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
     color: #FFFFFF;
     font-weight: 700;
     border-radius: 0.75rem;
-    box-shadow: 0 8px 24px rgba(249,115,22,0.4), 0 0 32px rgba(249,115,22,0.2);
+    box-shadow: 0 4px 14px rgba(217,119,6,0.25);
     transition: all 0.25s ease;
   }
   .btn-orange:hover { 
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 12px 32px rgba(249,115,22,0.5), 0 0 48px rgba(249,115,22,0.3);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(217,119,6,0.35);
   }
   .btn-orange:active { transform: translateY(0) scale(0.97); }
 
   .btn-secondary {
-    background: #EDE9FE;
-    color: #8B5CF6;
+    background: #EFE6DC;
+    color: #4A2E20;
     font-weight: 600;
-    border: 1.5px solid rgba(139,92,246,0.2);
+    border: 1.5px solid #DFCFC0;
     border-radius: 0.75rem;
     transition: all 0.25s ease;
   }
   .btn-secondary:hover { 
-    background: #DDD6FE; 
+    background: #E5D8CC; 
     transform: translateY(-2px); 
   }
   
   .dark .btn-secondary {
-    background: rgba(139,92,246,0.15);
-    color: #FFFFFF;
-    border-color: rgba(139,92,246,0.4);
+    background: #34241B;
+    color: #FAF4EE;
+    border-color: rgba(234,216,202,0.2);
   }
   .dark .btn-secondary:hover {
-    background: rgba(139,92,246,0.25);
-    box-shadow: var(--glow-purple);
+    background: #443024;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
   }
 
   .btn-ghost {
@@ -493,9 +500,9 @@
     transition: all 0.25s ease;
   }
   .btn-ghost:hover { 
-    background: #EDE9FE; 
-    border-color: #8B5CF6; 
-    color: #8B5CF6; 
+    background: #EFE6DC; 
+    border-color: #DFCFC0; 
+    color: #3B2318; 
   }
   
   .dark .btn-ghost {
@@ -641,13 +648,13 @@
   }
 
   /* ── Brand Gradients ── */
-  .byjus-gradient  { background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%); }
-  .brand-gradient  { background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%); }
+  .byjus-gradient  { background: linear-gradient(135deg, #5A382F 0%, #845543 50%, #4A2E20 100%); }
+  .brand-gradient  { background: linear-gradient(135deg, #5A382F 0%, #845543 50%, #4A2E20 100%); }
   
-  /* Hero Gradient - VIBRANT */
+  /* Hero Gradient - Warm Luxury Mocha */
   .hero-gradient {
-    background: linear-gradient(135deg, #6D28D9 0%, #7C3AED 50%, #4F46E5 100%);
-    box-shadow: 0 8px 32px rgba(109,40,217,0.3), 0 0 48px rgba(124,58,237,0.2);
+    background: linear-gradient(135deg, #5A382F 0%, #845543 50%, #4A2E20 100%);
+    box-shadow: 0 8px 32px rgba(90,56,47,0.3);
   }
   
   /* Glow utilities */

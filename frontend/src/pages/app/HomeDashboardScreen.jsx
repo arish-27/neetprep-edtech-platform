@@ -180,32 +180,31 @@ export function HomeDashboardScreen() {
         }
     };
     return (<div className="space-y-4">
-      {/* Hero banner — from uploaded: title x:-50 → 0 */}
+      {/* Hero banner — Luxury Roasted Cocoa Theme */}
       <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, ease: "easeInOut" }}>
-      <Card className="overflow-hidden">
-        <div className="relative p-6 md:p-8">
-          <div className="absolute inset-0 byjus-gradient opacity-90"/>
-          <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-white/15 blur-3xl"/>
-          <div className="absolute -left-24 -bottom-20 h-64 w-64 rounded-full bg-white/10 blur-3xl"/>
+      <Card className="overflow-hidden border border-[#5A382F]/20 shadow-md">
+        <div className="relative p-6 md:p-8" style={{ background: "linear-gradient(135deg, #5A382F 0%, #845543 50%, #4A2E20 100%)" }}>
+          <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-white/10 blur-3xl"/>
+          <div className="absolute -left-24 -bottom-20 h-64 w-64 rounded-full bg-black/15 blur-3xl"/>
           <div className="relative">
-            <Badge className="border-white/30 bg-white/15 text-white">
+            <Badge className="border-amber-200/30 bg-[#FFF9F3]/15 text-[#FFF9F3]">
               <Sparkles className="h-3.5 w-3.5"/>
-              Today&apos;s focus
+              NEET Medical Preparation
             </Badge>
-            <div className="mt-4 text-3xl font-extrabold tracking-tight text-white md:text-4xl">
-              Master one course, then test it.
+            <div className="mt-4 text-3xl font-serif font-black tracking-tight text-[#FFF9F3] md:text-4xl">
+              Master One Concept, Then Test It.
             </div>
-            <div className="mt-2 text-sm font-semibold text-white/85 max-w-2xl">
-              Watch a short video, take a quiz, then do a quick review. Consistency beats intensity.
+            <div className="mt-2 text-sm font-medium text-[#FFF9F3]/85 max-w-2xl">
+              Watch expert medical lectures, master high-yield NCERT diagrams, and practice daily quizzes. Consistency creates top doctors.
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link to="/app/subjects">
-                <Button variant="secondary" className="h-11 rounded-2xl border-white/30 bg-white/15 text-white hover:bg-white/20">
+                <Button className="h-11 rounded-2xl bg-[#FBF7F2] text-[#3B2318] hover:bg-[#F3E9DF] font-bold shadow-md">
                   Explore Subjects <ArrowRight className="h-4 w-4"/>
                 </Button>
               </Link>
               <Link to="/app/mock-tests">
-                <Button variant="ghost" className="h-11 rounded-2xl text-white hover:bg-white/15">
+                <Button variant="ghost" className="h-11 rounded-2xl text-[#FFF9F3] border border-white/20 hover:bg-white/10 font-bold">
                   Take a Mock <GraduationCap className="h-4 w-4"/>
                 </Button>
               </Link>
@@ -215,50 +214,53 @@ export function HomeDashboardScreen() {
       </Card>
       </motion.div>
 
-      {/* Stats cards — from uploaded: stagger + fadeUp y:60 */}
+      {/* Stats cards — Matching Subjects Pastel Theme (Rose, Caramel, Lavender) */}
       <motion.div className="grid gap-4 md:grid-cols-3" variants={{
             animate: { transition: { staggerChildren: 0.15 } },
         }} initial="initial" animate="animate">
-        <motion.div variants={{ initial: { opacity: 0, y: 60 }, animate: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }} whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(124,58,237,0.4)" }}>
-          <Card className="p-5">
+        {/* Physics / Time Watched (Rose Palette) */}
+        <motion.div variants={{ initial: { opacity: 0, y: 60 }, animate: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }} whileHover={{ scale: 1.03, boxShadow: "0 12px 28px rgba(166,83,93,0.18)" }}>
+          <Card className="p-5 border transition-all" style={{ backgroundColor: "#FDF5F6", borderColor: "#FAD5D8" }}>
             <div className="flex items-center justify-between">
-              <div className="text-xs font-extrabold text-ink-700 dark:text-ink-200">Time watched</div>
-              <motion.div className="h-10 w-10 rounded-2xl border border-white/10 bg-white/10 grid place-items-center" whileHover={{ scale: 1.15, rotate: 10 }} transition={{ type: "spring", stiffness: 400, damping: 18 }}>
-                <Flame className="h-5 w-5 text-byjus-400"/>
+              <div className="text-xs font-bold uppercase tracking-wider text-[#A6535D]">Time watched</div>
+              <motion.div className="h-10 w-10 rounded-2xl grid place-items-center shadow-sm" style={{ backgroundColor: "#FAD5D8", color: "#52272B" }} whileHover={{ scale: 1.12, rotate: 8 }} transition={{ type: "spring", stiffness: 400, damping: 18 }}>
+                <Flame className="h-5 w-5 text-[#A6535D]"/>
               </motion.div>
             </div>
-            <div className="mt-3 text-3xl font-extrabold text-ink-900 dark:text-ink-50">
+            <div className="mt-3 text-3xl font-serif font-black text-[#52272B]">
               {summaryLoading ? <Skeleton className="h-10 w-24"/> : formatHours(summary?.watched_seconds ?? 0)}
             </div>
-            <div className="mt-1 text-sm font-semibold text-ink-600 dark:text-ink-200">Updates when you watch lessons.</div>
+            <div className="mt-1 text-xs font-medium text-[#7A3E45]">Updates as you complete lectures.</div>
           </Card>
         </motion.div>
 
-        <motion.div variants={{ initial: { opacity: 0, y: 60 }, animate: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }} whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(124,58,237,0.4)" }}>
-          <Card className="p-5">
+        {/* Chemistry / Avg Quiz Score (Caramel Palette) */}
+        <motion.div variants={{ initial: { opacity: 0, y: 60 }, animate: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }} whileHover={{ scale: 1.03, boxShadow: "0 12px 28px rgba(148,97,59,0.18)" }}>
+          <Card className="p-5 border transition-all" style={{ backgroundColor: "#FDF8F3", borderColor: "#FBE5CF" }}>
             <div className="flex items-center justify-between">
-              <div className="text-xs font-extrabold text-ink-700 dark:text-ink-200">Avg quiz score</div>
-              <motion.div className="h-10 w-10 rounded-2xl border border-white/10 bg-white/10 grid place-items-center" whileHover={{ scale: 1.15, rotate: 10 }} transition={{ type: "spring", stiffness: 400, damping: 18 }}>
-                <GraduationCap className="h-5 w-5 text-byjus-400"/>
+              <div className="text-xs font-bold uppercase tracking-wider text-[#94613B]">Avg quiz score</div>
+              <motion.div className="h-10 w-10 rounded-2xl grid place-items-center shadow-sm" style={{ backgroundColor: "#FBE5CF", color: "#52321C" }} whileHover={{ scale: 1.12, rotate: 8 }} transition={{ type: "spring", stiffness: 400, damping: 18 }}>
+                <GraduationCap className="h-5 w-5 text-[#94613B]"/>
               </motion.div>
             </div>
-            <div className="mt-3 text-3xl font-extrabold text-ink-900 dark:text-ink-50">
+            <div className="mt-3 text-3xl font-serif font-black text-[#52321C]">
               {summaryLoading ? <Skeleton className="h-10 w-20"/> : (<><AnimatedNumber value={summary?.avg_score_pct ?? 0} suffix="%"/></>)}
             </div>
-            <div className="mt-1 text-sm font-semibold text-ink-600 dark:text-ink-200">Based on submitted quizzes.</div>
+            <div className="mt-1 text-xs font-medium text-[#7A4E30]">Based on submitted quizzes & tests.</div>
           </Card>
         </motion.div>
 
-        <motion.div variants={{ initial: { opacity: 0, y: 60 }, animate: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }} whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(124,58,237,0.4)" }}>
-          <Card className="p-5">
-            <div className="text-xs font-extrabold text-ink-700 dark:text-ink-200">Overall progress</div>
+        {/* Biology / Overall Progress (Lavender Palette) */}
+        <motion.div variants={{ initial: { opacity: 0, y: 60 }, animate: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }} whileHover={{ scale: 1.03, boxShadow: "0 12px 28px rgba(104,75,112,0.18)" }}>
+          <Card className="p-5 border transition-all" style={{ backgroundColor: "#FAF5FC", borderColor: "#E3D4E6" }}>
+            <div className="text-xs font-bold uppercase tracking-wider text-[#684B70]">Overall progress</div>
             <div className="mt-3 space-y-3">
               {subjectProgressLoading ? (<><Skeleton className="h-4 w-full"/><Skeleton className="h-4 w-full"/><Skeleton className="h-4 w-full"/></>) : (subjects.map((s, i) => {
             const pct = subjectProgress[s.id] ?? 0;
             return (<motion.div key={s.id} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 + i * 0.08, duration: 0.3 }}>
-                      <div className="flex items-center justify-between text-sm font-semibold text-ink-700 dark:text-ink-200">
+                      <div className="flex items-center justify-between text-sm font-semibold text-[#492C51]">
                         <span>{s.name}</span>
-                        <span className="text-ink-500 dark:text-ink-300">{pct}%</span>
+                        <span className="text-xs font-bold text-[#6F4878]">{pct}%</span>
                       </div>
                       <ProgressBar value={pct} className="mt-2"/>
                     </motion.div>);
@@ -276,10 +278,10 @@ export function HomeDashboardScreen() {
         <Card className="p-5 lg:col-span-2">
           <div className="flex items-center justify-between gap-3">
             <div>
-              <div className="text-sm font-extrabold text-ink-900 dark:text-ink-50">Continue where you left off</div>
-              <div className="text-sm font-semibold text-ink-600 dark:text-ink-200">Your in-progress lessons</div>
+              <div className="text-sm font-serif font-black text-[#3B2318] dark:text-[#FAF4EE]">Continue where you left off</div>
+              <div className="text-xs font-medium text-[#7A5C4D] dark:text-[#D5C4B5]">Your in-progress lessons</div>
             </div>
-            <Link to="/app/recorded-classes" className="text-sm font-bold text-byjus-300 hover:underline">
+            <Link to="/app/recorded-classes" className="text-xs font-bold text-[#5A3828] hover:text-[#3B2318] hover:underline">
               Open courses
             </Link>
           </div>
@@ -291,24 +293,24 @@ export function HomeDashboardScreen() {
                 const pct = pctFor(v.id, v.durationMin, videoProgress);
                 return (<motion.div key={v.id} variants={staggerItem} whileHover={{ x: 4 }} transition={{ type: "spring", stiffness: 400, damping: 25 }}>
                   <Link to={`/app/videos/${v.id}`} className="focus-ring rounded-2xl">
-                    <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 shadow-soft transition hover:bg-white/10">
-                      <div className="h-14 w-24 shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                    <div className="flex items-center gap-3 rounded-2xl border border-[#EAE0D5] bg-[#FDFBF8] dark:bg-[#2A1D16] dark:border-[#3B281E] p-3 shadow-sm transition hover:bg-[#F7F1EA]">
+                      <div className="h-14 w-24 shrink-0 overflow-hidden rounded-2xl border border-[#EAE0D5] bg-[#F5EBE1]">
                         <ThumbImage src={thumb}/>
                       </div>
                       <div className="min-w-0 flex-1">
-                        <div className="truncate text-sm font-extrabold text-ink-900 dark:text-ink-50">{v.title}</div>
-                        <div className="truncate text-xs font-semibold text-ink-600 dark:text-ink-200">{v.teacher} · {v.durationMin} min</div>
+                        <div className="truncate text-sm font-extrabold text-[#3B2318] dark:text-[#FAF4EE]">{v.title}</div>
+                        <div className="truncate text-xs font-medium text-[#7A5C4D] dark:text-[#D5C4B5]">{v.teacher} · {v.durationMin} min</div>
                         {pct > 0 ? <ProgressBar value={pct} className="mt-2 h-1.5"/> : null}
                       </div>
-                      <motion.div className="grid h-11 w-11 place-items-center rounded-2xl byjus-gradient text-white shadow-glow" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                      <motion.div className="grid h-11 w-11 place-items-center rounded-2xl byjus-gradient text-white shadow-sm" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                         <PlayCircle className="h-5 w-5"/>
                       </motion.div>
                     </div>
                   </Link>
                   </motion.div>);
             })}
-              </motion.div>) : (<div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm font-semibold text-ink-600 dark:text-ink-200">
-                Start a course from <span className="font-extrabold text-ink-900 dark:text-ink-50">My Courses</span> to see continue-watching here.
+              </motion.div>) : (<div className="rounded-2xl border border-[#EAE0D5] bg-[#FDFBF8] p-4 text-xs font-semibold text-[#7A5C4D]">
+                Start a course from <span className="font-extrabold text-[#3B2318]">My Courses</span> to see continue-watching here.
               </div>)}
           </div>
         </Card>
@@ -316,10 +318,10 @@ export function HomeDashboardScreen() {
         <Card className="p-5">
           <div className="flex items-center justify-between gap-3">
             <div>
-              <div className="text-sm font-extrabold text-ink-900 dark:text-ink-50">Recommended next</div>
-              <div className="text-sm font-semibold text-ink-600 dark:text-ink-200">Based on your learning activity</div>
+              <div className="text-sm font-serif font-black text-[#3B2318] dark:text-[#FAF4EE]">Recommended next</div>
+              <div className="text-xs font-medium text-[#7A5C4D] dark:text-[#D5C4B5]">Based on your learning activity</div>
             </div>
-            <Badge className="bg-white/10 border-white/10 text-ink-200">
+            <Badge className="bg-[#EFE6DC] border-[#DFCFC0] text-[#5A3828]">
               <Wand2 className="h-3.5 w-3.5"/>
               Smart
             </Badge>
@@ -332,17 +334,17 @@ export function HomeDashboardScreen() {
               </>) : (recommendedCourses.map((c) => {
             const busy = action?.courseId === c.id && action.type === "watch";
             return (<button key={c.id} type="button" className="w-full text-left focus-ring rounded-2xl" onClick={() => runCourse(c.id, "watch")} disabled={Boolean(action) && !busy}>
-                    <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 shadow-soft transition hover:bg-white/10">
-                      <div className="h-12 w-16 shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                    <div className="flex items-center gap-3 rounded-2xl border border-[#EAE0D5] bg-[#FDFBF8] dark:bg-[#2A1D16] dark:border-[#3B281E] p-3 shadow-sm transition hover:bg-[#F7F1EA]">
+                      <div className="h-12 w-16 shrink-0 overflow-hidden rounded-2xl border border-[#EAE0D5] bg-[#F5EBE1]">
                         <ThumbImage src={c.thumbnail_url}/>
                       </div>
                       <div className="min-w-0 flex-1">
-                        <div className="truncate text-sm font-extrabold text-ink-900 dark:text-ink-50">{c.title}</div>
-                        <div className="truncate text-xs font-semibold text-ink-600 dark:text-ink-200">
+                        <div className="truncate text-sm font-extrabold text-[#3B2318] dark:text-[#FAF4EE]">{c.title}</div>
+                        <div className="truncate text-xs font-medium text-[#7A5C4D] dark:text-[#D5C4B5]">
                           {c.subject.toUpperCase()}
                         </div>
                       </div>
-                      <Badge className="bg-white/10 border-white/10 text-ink-200">{busy ? "..." : "Go"}</Badge>
+                      <Badge className="bg-[#EFE6DC] border-[#DFCFC0] text-[#5A3828]">{busy ? "..." : "Go"}</Badge>
                     </div>
                   </button>);
         }))}

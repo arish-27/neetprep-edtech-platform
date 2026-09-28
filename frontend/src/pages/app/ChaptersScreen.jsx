@@ -17,9 +17,9 @@ import { useHydrated } from "@/state/useHydrated";
 import { cn } from "@/lib/cn";
 // ── Subject gradient map ──────────────────────────────────────────────────────
 const SUBJECT_GRADIENTS = {
-    physics: "from-violet-600 via-fuchsia-600 to-pink-500",
-    chemistry: "from-blue-700 via-blue-600 to-indigo-500",
-    biology: "from-emerald-600 via-teal-600 to-cyan-500",
+    physics: "from-[#FAD5D8] via-[#EAA9AD] to-[#B85D67]",
+    chemistry: "from-[#FBE5CF] via-[#E6BF9B] to-[#996538]",
+    biology: "from-[#E3D4E6] via-[#C7ADC9] to-[#6E4973]",
 };
 // ── Local chapter card (mock data fallback) ───────────────────────────────────
 function LocalChapterCard({ chapter, subjectId, progressPct, }) {

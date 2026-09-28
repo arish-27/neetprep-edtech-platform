@@ -443,38 +443,38 @@ export function RecordedClassesScreen() {
     };
     return (<motion.div className="space-y-4" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, ease: "easeOut" }}>
       <Reveal>
-        <Card className="p-5 overflow-hidden relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-byjus-900/25 via-ink-950/15 to-ink-950/45"/>
+        <Card className="p-6 overflow-hidden relative border border-[#EAE0D5] bg-[#FDFBF8] dark:bg-[#2A1D16]">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#5A382F]/10 via-transparent to-[#845543]/10"/>
           <div className="relative flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
             <div className="min-w-0">
-              <Badge className="bg-white/10 border-white/10 text-ink-200">
+              <Badge className="bg-[#EFE6DC] border-[#DFCFC0] text-[#5A3828]">
                 <Play className="h-3.5 w-3.5"/>
-                Recorded classes
+                Masterclass Library
               </Badge>
-              <div className="mt-3 text-2xl font-extrabold text-ink-900 dark:text-ink-50">Watch by subject</div>
-              <div className="mt-2 text-sm font-semibold text-ink-600 dark:text-ink-200">
-                Pick a subject, click Watch, and the player opens inside the app (no external links).
+              <div className="mt-3 text-3xl font-serif font-black text-[#3B2318] dark:text-[#FAF4EE]">Medical Lecture Vault</div>
+              <div className="mt-2 text-sm font-medium text-[#7A5C4D] dark:text-[#D5C4B5]">
+                Pick a subject, watch concept breakdowns, and strengthen high-yield NEET topics.
               </div>
             </div>
 
-            <div className="shrink-0 rounded-3xl border border-white/10 bg-white/5 p-4 shadow-soft">
-              <div className="text-xs font-extrabold text-ink-500 dark:text-ink-300">Logged in</div>
-              <div className="mt-1 flex items-center gap-2 text-sm font-extrabold text-ink-900 dark:text-ink-50">
-                <span className="grid h-8 w-8 place-items-center rounded-2xl border border-white/10 bg-white/10">
-                  <UserRound className="h-4 w-4 text-byjus-400"/>
+            <div className="shrink-0 rounded-2xl border border-[#EAE0D5] bg-[#F5EBE1] p-3 shadow-sm">
+              <div className="text-[11px] font-bold uppercase tracking-wider text-[#8C6F5E]">Active Student</div>
+              <div className="mt-1 flex items-center gap-2 text-xs font-bold text-[#3B2318]">
+                <span className="grid h-7 w-7 place-items-center rounded-xl bg-[#5A3828] text-white shadow-sm">
+                  <UserRound className="h-3.5 w-3.5"/>
                 </span>
-                {user?.email ?? "student@demo.com"}
+                {user?.email ?? "student@neetprep.com"}
               </div>
             </div>
           </div>
 
           <div className="relative mt-5 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex items-center gap-2 overflow-x-auto pb-1">
-              <div className="inline-flex items-center gap-1 rounded-2xl border border-white/10 bg-white/5 p-1 shadow-soft">
+              <div className="inline-flex items-center gap-1 rounded-2xl border border-[#EAE0D5] bg-[#FDFBF8] dark:bg-[#2A1D16] p-1 shadow-sm">
                 {tabs.map((t) => {
             const activeTab = t.id === subjectId;
-            return (<button key={t.id} type="button" onClick={() => setSubjectId(t.id)} className={cn("relative h-10 whitespace-nowrap rounded-2xl px-4 text-sm font-extrabold transition focus-ring", activeTab ? "text-ink-50" : "text-ink-200 hover:text-ink-50")}>
-                      {activeTab ? (<motion.span layoutId="rec_tab" className="absolute inset-0 rounded-2xl byjus-gradient opacity-90"/>) : null}
+            return (<button key={t.id} type="button" onClick={() => setSubjectId(t.id)} className={cn("relative h-10 whitespace-nowrap rounded-2xl px-4 text-sm font-bold transition focus-ring", activeTab ? "text-[#FFF9F3]" : "text-[#6C5243] hover:text-[#3B2318]")}>
+                      {activeTab ? (<motion.span layoutId="rec_tab" className="absolute inset-0 rounded-2xl byjus-gradient opacity-95 shadow-sm"/>) : null}
                       <span className="relative">{t.label}</span>
                     </button>);
         })}

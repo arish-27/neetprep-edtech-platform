@@ -10,7 +10,7 @@ function applyTheme(theme) {
         root.classList.remove("dark");
 }
 export const useAppStore = create()(persist((set, get) => ({
-    theme: "dark",
+    theme: "light",
     sidebarCollapsed: false,
     defaultPlaybackRate: 1.25,
     videoBookmarks: {},
